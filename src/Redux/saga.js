@@ -2,13 +2,13 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { ADD_BOOK, ADD_NEW_BOOK, FETCH_SUCCESS } from './constant';
 
 function* getProduct() {
-    let data = yield fetch('http://localhost:4401/product');
+    let data = yield fetch('https://amitjangid12.github.io/book-library-api/db.json');
     data = yield data.json();
     yield put({ type: FETCH_SUCCESS, data })
 }
 
 function* addNew(data) {
-    yield fetch("http://localhost:4401/product",
+    yield fetch("https://amitjangid12.github.io/book-library-api/db.json",
         {
             method: "POST",
             headers: {
