@@ -7,18 +7,18 @@ const AddBookForm = () => {
 
     const [errors, setErrors] = useState("")
     const [state, setState] = useState({
-        id: "",
+        // id: "",
         bookName: "",
         author: "",
         bookPercent: "",
-        gener: "",
+        bookGener: "",
         description: "",
         photo: "",
 
     });
 
     const navigate = useNavigate();
-    const { bookPercent, gener, bookName, author, description } = state
+    const { bookPercent, bookGener, bookName, author, description } = state
 
     const dispatch = useDispatch()
 
@@ -30,7 +30,7 @@ const AddBookForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (!bookPercent || !gener || !bookName || !author || !description) {
+        if (!bookPercent || !bookGener || !bookName || !author || !description) {
             setErrors("* Please fill value");
         } else {
             setErrors("");
@@ -83,7 +83,7 @@ const AddBookForm = () => {
                             <label className="form-field">
                                 Book Show:
                             </label>
-                            <input className="input" type="text" placeholder="adventure" name="gener" value={gener} onChange={(e) => handleInputChange(e)} />
+                            <input className="input" type="text" placeholder="adventure" name="bookGener" value={bookGener} onChange={(e) => handleInputChange(e)} />
                         </div>
                         <p className="show-error">{errors}</p>
 

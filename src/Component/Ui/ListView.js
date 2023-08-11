@@ -13,7 +13,7 @@ const ListView = (props) => {
         const searchFieldValue = e.target.value || "";
         setBookLibraryConfig({ ...bookLibraryConfig, searchValue: searchFieldValue });
 
-        const commonWord = currentData.filter((newValue) => newValue.bookName.toUpperCase().includes(searchFieldValue.toUpperCase()))
+        const commonWord = currentData.data.filter((newValue) => newValue.bookName.toUpperCase().includes(searchFieldValue.toUpperCase()))
         setFiltered(commonWord)
     }
 
@@ -62,7 +62,7 @@ const ListView = (props) => {
                         })
                     ) : (
                         serachEnable ? (!filtered.length && <p className="data-not-found"> {searchValue} Result not Found </p>) : (
-                            currentData && currentData.length > 0 && currentData.map((data) => {
+                            currentData.data && currentData.data.length > 0 && currentData.data.map((data) => {
                                 return <div key={data.id}>
 
                                     <div className='book-details-list-view'>

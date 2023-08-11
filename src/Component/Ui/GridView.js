@@ -8,6 +8,7 @@ const GridView = (props) => {
     const { setClose, setBookLibraryConfig, bookLibraryConfig, filtered, setFiltered, searchValue } = props;
     let debounceTimeout;
     const currentData = useSelector((data) => data.addBookReducer);
+    console.log(currentData.data);
     const [serachEnable, setSearchEnable] = useState(false)
     const [showNotFound, setShowNotFound] = useState(false);
 
@@ -21,7 +22,7 @@ const GridView = (props) => {
         if (searchValue !== "") {
             setSearchEnable(true);
             debounceTimeout = setTimeout(() => {
-                const commonWord = currentData.filter((newValue) =>
+                const commonWord = currentData.data.filter((newValue) =>
                     newValue.bookName.toUpperCase().includes(searchValue.toUpperCase())
                 );
                 setFiltered(commonWord);
@@ -74,7 +75,7 @@ const GridView = (props) => {
                         })
                     ) : (
                         serachEnable && showNotFound ? (!filtered.length && <p className="data-not-found"> {searchValue} Result not Found </p>) : (
-                            currentData && currentData.length > 0 && currentData.map((data) => {
+                            currentData.data && currentData.data.length > 0 && currentData.data.map((data) => {
 
                                 return (
 

@@ -16,6 +16,7 @@ function BookLibrary() {
 
     const [close, setClose] = useState(false);
     const currentData = useSelector((data) => data.addBookReducer);
+    // let finalDataLength = currentData.data[0].author
     const [filtered, setFiltered] = useState([]);
     const [bookLibraryConfig, setBookLibraryConfig] = useState({
         theme: "light",
@@ -63,7 +64,7 @@ function BookLibrary() {
                             </div>
                         </div>
                         <div>
-                            <span><span style={{position:'relative'}}>{currentData.length}</span></span>
+                            <span><span style={{position:'relative'}}>{``}</span></span>
                         </div>
                     </div>
                     <div className='library-settings'>
