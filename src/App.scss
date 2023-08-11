@@ -1,0 +1,856 @@
+@import "./Component/Variable/variable.scss";
+
+@mixin flex-wid() {
+  display: flex;
+  width: 100%;
+}
+
+// bookLibrary component element css {
+
+.desktop-mobile-view {
+  width: 90%;
+  min-height: 100vh;
+  position: relative;
+  padding: 0 90px 0;
+  background-color: $main-background-color;
+}
+
+.library {
+  @include flex-wid();
+  // display: flex;
+  // width: 100%;
+  background-color: $color-white;
+}
+
+.settings {
+  min-height: 100vh;
+  width: 20%;
+  padding: 0 10px;
+  border-right: 2px solid $border-color;
+}
+
+.library-heading {
+  color: $settings-color;
+  font-size: 20px;
+  padding-left: 15px;
+
+}
+
+.library-settings {
+  color: $settings-color;
+  font-size: 20px;
+  margin: 25px 0px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons-play-add-theme {
+  position: absolute;
+  top: 2px;
+}
+
+.add-icon {
+  position: absolute;
+  top: 0;
+  left: -7px;
+}
+
+.setting-option-position {
+  position: relative;
+}
+
+.add-button {
+  color: $settings-color;
+  font-size: 20px;
+  width: 100%;
+  background: $color-white;
+  border: none;
+  cursor: pointer;
+}
+
+.book-available {
+  padding-left: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 25px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25px;
+  background-color: $slider-uncheck;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $color-white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: $checked-color;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+// Rounded sliders 
+
+.slider.round {
+  border-radius: 34px;
+  width: 55px
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.show-heading-book {
+  width: 80%;
+}
+
+.dark-mode {
+  display: none;
+  margin: 10px 20px 0 0;
+  text-align: right;
+}
+
+.dark-mode-mobile {
+  padding: 10px 10px 5px;
+  border-radius: 10px;
+  background-color: $color-white;
+  cursor: pointer;
+}
+
+.book-add-mode {
+  color: black;
+  position: absolute;
+  left: 30px;
+  width: 145px;
+}
+
+.book-add {
+  position: absolute;
+  left: 22px;
+}
+
+.dark-mode-mobile:hover {
+  background-color: $control-background;
+}
+
+.light {
+  background-color: $color-white;
+}
+
+.dark {
+  background-color: $main-background-color;
+
+  .heading,
+  .data-not-found,
+  .book-name-author,
+  .book-add-mode,
+  .book-add,
+  .title-bar,
+  .book-details-list-view {
+    color: $color-white;
+  }
+
+  .heading-dot {
+    background-color: $main-background-color;
+  }
+
+  .search-bar {
+    background: $main-background-color;
+    color: $control-background;
+    border: 1px solid $color-white;
+  }
+
+  // .data-not-found {
+  //   color: $color-white;
+  // }
+
+  .settings {
+    background-color: $book-name-author;
+  }
+
+  // .book-name-author {
+  //   color: $color-white;
+  // }
+
+  // .book-add-mode {
+  //   color: $color-white;
+  // }
+
+  // .book-add {
+  //   color: $color-white;
+  // }
+
+  .library-heading {
+    color: $control-background;
+  }
+
+  .library-settings {
+    color: $control-background;
+  }
+
+  .dark-mode-hover:hover {
+    background-color: $dark-mode-hover;
+    border-radius: 20px;
+  }
+
+  .dark-mode-my-books {
+    background-color: $main-background-color;
+    border-radius: 20px;
+  }
+
+  .add-button {
+    background-color: $book-name-author;
+    color: $color-white;
+  }
+
+  // .title-bar {
+  //   color: $color-white;
+  // }
+
+  // .book-details-list-view {
+  //   color: $color-white;
+  // }
+}
+
+.show-heading-book-margin {
+  margin: 0px 20px 40px 30px;
+}
+
+.heading-container {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid $border-color;
+  border-width: 2px;
+}
+
+.heading {
+  color: $main-background-color;
+  display: inline-block;
+  font-size: 25px;
+}
+
+.data-not-found {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+// mixins 
+@mixin grid-list-search() {
+  color: $color-view;
+  position: absolute;
+  padding: 5px 5px 0 5px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.grid-view {
+  @include grid-list-search();
+  right: 118px;
+  top: 20px;
+
+}
+
+.grid-view:hover,
+.list-view:hover,
+// .search-first:hover,
+.heading-dot:hover {
+  border-radius: 10px;
+  background: $control-background;
+
+}
+
+.list-view {
+  @include grid-list-search();
+  right: 75px;
+  top: 20px;
+
+}
+
+// .search-first {
+//   @include grid-list-search();
+//   right: 15px;
+//   top: 20px;
+
+// }
+
+.heading-dot {
+  margin-left: 10px;
+  padding: 0 10px 10px 10px;
+  border-radius: 10px;
+  background: $dot-background;
+  color: $dot-color;
+  cursor: pointer;
+}
+
+//bookLibrary }
+// in tab view show search box {
+
+.searh-container {
+  position: relative;
+  width: 370px;
+  margin: 10px 0 0 auto;
+}
+
+.search-second {
+  position: absolute;
+  color: $search-second-color;
+  font-size: 25px;
+  top: 10px;
+  left: 10px;
+}
+
+.search-bar {
+  background: $color-white;
+  color: $search-field-color;
+  outline-color: $search-outline;
+  outline-width: 1px;
+  font-size: 18px;
+  width: 275px;
+  border-radius: 10px;
+  border: 1px solid $search-field-color;
+  padding: 10px 50px 10px 40px;
+}
+
+.search-cross-icon {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: $search-second-color;
+  cursor: pointer;
+}
+
+// tab view }
+
+// Grid View component css {
+
+@mixin book-per-gen() {
+  color: $color-white;
+  position: absolute;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.show-book-grid-view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // display: grid;
+  // grid-template-columns: repeat(5,1fr);
+}
+
+.book-details-grid-view {
+  width: 18%;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.book-grid-view {
+  position: relative;
+}
+
+.book-image-grid-view {
+  width: 100%;
+  height: 350px;
+  border-radius: 30px;
+}
+
+.book-name-author {
+  color: $book-name-author;
+}
+
+.book-percent-grid-view {
+  left: 20px;
+  top: 20px;
+  background: $percent-color;
+  font-size: 12px;
+  @include book-per-gen()
+}
+
+.book-genre-grid-view {
+  bottom: 20px;
+  right: 20px;
+  background: $show-book;
+  font-size: 16px;
+  @include book-per-gen()
+}
+
+// Grid View compo }
+
+// List View compo {
+
+.title-bar {
+  @include flex-wid();
+  // display: flex;
+  // width: 100%;
+  margin-top: 20px;
+}
+
+.book-list-view {
+  display: flex;
+  width: 40%;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.book-genre-list-view,
+.book-percent-list-view,
+.book-opened-list-view {
+  width: 20%;
+  margin-right: 20px;
+
+}
+
+// .book-percent-list-view {
+//   // width: 20%;
+//   // margin-right: 20px;
+// }
+
+// .book-opened-list-view {
+//   width: 20%;
+// }
+
+.book-details-list-view {
+  width: 100%;
+  margin-top: 20px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.book-image-list-view {
+  width: 70px;
+  border-radius: 10px;
+  height: 130px;
+}
+
+.title-author-name {
+  margin-left: 20px;
+}
+
+// List view }
+
+// Modal View compo {
+
+.open-modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $search-field-color;
+}
+
+.show-book-modal-view {
+  width: 650px;
+  text-align: center;
+  margin: 100px auto 800px;
+}
+
+.book-modal-view {
+  background: $color-white;
+  padding: 50px 70px;
+  border-radius: 60px;
+  color: $main-background-color;
+  position: relative;
+}
+
+.book-image-modal-view {
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+}
+
+.book-name {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  color: $book-author-color;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.discription {
+  color: $discription-color;
+  line-height: 1.5;
+  font-family: Inter, sans-serif;
+}
+
+.button-close-reading {
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 16px;
+  color: $color-view;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.continue-button {
+  background-color: $checked-color;
+  color: $color-white;
+  padding: 15px 80px;
+}
+
+.modal-cross-icon {
+  font-size: 30px;
+  position: absolute;
+  right: 35px;
+  top: 30px;
+  color: $color-view;
+  cursor: pointer;
+}
+
+// Modal View compo }
+
+// Add new book compo {
+
+.add-book-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #5a727e, skyblue 0%);
+  position: relative;
+  color: $settings-color;
+  min-height: 100vh;
+}
+
+.book-form {
+  text-align: center;
+  margin: 20px;
+  padding-bottom: 20px;
+  width: 800px;
+  background-color: $form-book-background;
+  border-radius: 20px;
+}
+
+.form-data {
+  font-size: 20px;
+  padding: 10px;
+  margin: 0 10px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.form-field {
+  font-weight: 600;
+  margin-bottom: 10px;
+  width: 160px;
+  text-align: start;
+}
+
+.input {
+  color: $book-name-author;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  height: 20px;
+}
+
+.file-upload {
+  width: 280px;
+}
+
+.text-area {
+  height: 100px;
+  width: 270px;
+}
+
+.show-error {
+  text-align: right;
+  padding-right: 130px;
+  color: $error-color;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: $checked-color;
+  color: $color-white;
+  font-weight: 600;
+}
+
+// Add new book form  }
+
+@media (max-width:1530px) {
+  .book-details-grid-view {
+    width: 23%;
+  }
+}
+
+@media (max-width:1360px) {
+  .book-details-grid-view {
+    width: 31%;
+  }
+
+  .settings {
+    width: 25%;
+  }
+}
+
+@media (max-width:1140px) {
+
+  .settings {
+    width: 30%;
+  }
+
+}
+
+@media (max-width:994px) {
+
+  .settings {
+    width: 40%;
+  }
+
+  .book-details-grid-view {
+    width: 47%;
+  }
+
+  .book-list-view {
+    width: 60%;
+  }
+
+  .book-percent-list-view {
+    margin: 0;
+  }
+
+  .book-opened-list-view {
+    display: none;
+  }
+
+}
+
+@media (max-width:835px) {
+
+  .settings {
+    width: 50%;
+  }
+
+  .book-modal-view {
+    padding: 50px 20px;
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .book-details-grid-view {
+    width: 47%;
+  }
+
+  .settings {
+    display: none;
+  }
+
+  .show-heading-book {
+    width: 100%;
+  }
+
+  .dark-mode {
+    display: block;
+  }
+
+  .grid-view {
+    right: 50px;
+  }
+
+  .list-view {
+    right: 5px;
+  }
+
+  // .search-first {
+  //   display: none;
+  // }
+
+  .searh-container {
+    margin: 10px auto 0;
+    width: 85%;
+  }
+
+  .search-bar {
+    border: 1px solid $border-color;
+    width: 85%;
+  }
+
+  .search-cross-icon {
+    right: 0;
+  }
+
+  .open-modal {
+    width: 100%;
+    left: 0;
+  }
+
+}
+
+@media (max-width:640px) {
+
+  .search-cross-icon {
+    right: -18px;
+  }
+
+  .show-book-modal-view {
+    width: 85%;
+    margin: 40px auto 800px;
+  }
+}
+
+@media (max-width:568px) {
+
+  .desktop-mobile-view {
+    padding: 0 40px 0;
+  }
+
+  .show-heading-book-margin {
+    margin: 0 10px 40px 10px;
+  }
+
+  .book-genre-list-view {
+    display: none;
+  }
+
+  .book-list-view {
+    width: 70%;
+  }
+
+  .book-percent-list-view {
+    width: 30%;
+    text-align: end;
+  }
+}
+
+@media (max-width:525px) {
+  .search-bar {
+    width: 70%;
+  }
+
+  .search-cross-icon {
+    right: 28px;
+  }
+}
+
+@media (max-width:486px) {
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .grid-view {
+    top: 10px;
+    right: 50px;
+    font-size: 25px;
+  }
+
+  .list-view {
+    top: 10px;
+    right: 5px;
+    font-size: 25px;
+  }
+
+  .book-image-grid-view {
+    height: 280px;
+  }
+
+  .book-modal-view {
+    border-radius: 30px;
+  }
+
+  .modal-cross-icon {
+    top: 20px;
+    right: 15px;
+  }
+
+  .form-data {
+    flex-wrap: wrap;
+  }
+
+  .file-upload {
+    width: 90%;
+  }
+
+  .continue-button {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+}
+
+@media (max-width:425px) {
+  .book-details-grid-view {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-cross-icon {
+    right: 5px;
+  }
+
+  .book-image-modal-view {
+    width: 200px;
+    height: 250px;
+  }
+
+  .book-form {
+    width: 90%;
+  }
+
+}
+
+@media (max-width:350px) {
+  .search-cross-icon {
+    right: 0px;
+  }
+
+  .search-bar {
+    width: 67%
+  }
+}
