@@ -1,6 +1,5 @@
 {
   "name": "resposive-design-desktop-mobile",
-  "homepage": "https://amitjangid12.github.io/responsive-design-desktop-mobile",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +8,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "gh-pages": "^6.0.0",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
@@ -24,8 +22,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
