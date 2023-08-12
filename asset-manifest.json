@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/desktop-mobile-responsive-design/static/css/main.243a2807.css",
+    "main.js": "/desktop-mobile-responsive-design/static/js/main.70ce093f.js",
+    "index.html": "/desktop-mobile-responsive-design/index.html",
+    "main.243a2807.css.map": "/desktop-mobile-responsive-design/static/css/main.243a2807.css.map",
+    "main.70ce093f.js.map": "/desktop-mobile-responsive-design/static/js/main.70ce093f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.243a2807.css",
+    "static/js/main.70ce093f.js"
+  ]
+}
